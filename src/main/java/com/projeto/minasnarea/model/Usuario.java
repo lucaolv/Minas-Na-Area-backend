@@ -4,13 +4,13 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
@@ -29,7 +29,8 @@ public class Usuario {
 	@Size(min= 5, max= 30 , message = "O nome deve conter no minimo 5 caracteres")
 	private String nome;
 	
-	@NotNull(message = "Usuario é obrigatorio, por favor preencha(Exemplo: minasnaarea@email.com)")
+	@Schema(example = "email@email.com.br")
+	@NotNull(message = "Usuario é obrigatorio, por favor preencha")
 	@Email( message = "O usuario deve ser um email válido")
 	private String usuario;
 	
