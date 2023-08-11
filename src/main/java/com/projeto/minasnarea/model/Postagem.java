@@ -29,6 +29,8 @@ public class Postagem {
 	@Size(min = 5, max = 100, message = "O atributo titulo deve conter no minimo 5 e no maximo 100 caracteres")
 	private String titulo;
 	
+	private String foto;
+	
 	@NotBlank(message = "O atributo texto é Obrigatório!" )
 	@Size(min = 10, max = 1000, message = "O atributo texto deve conter no minimo 10 e no maximo 1000 caracteres")
 	private String texto;
@@ -91,6 +93,14 @@ public class Postagem {
 
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
+	}
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
 	}
 	
 }
